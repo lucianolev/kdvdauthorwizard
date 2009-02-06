@@ -130,7 +130,7 @@ DVDAuthorWizard::DVDAuthorWizard(QWidget* parent) : KAssistantDialog ( parent ) 
 	ui_pageauthoring.abortButton->setEnabled(false);
 
 	connect(m_dvdvideo, SIGNAL(progressUpdated(int)), ui_pageauthoring.progressBar, SLOT(setValue(int)));
-	connect(m_dvdvideo, SIGNAL(processRunning(bool)), this, SLOT(setButtons(bool)));
+	connect(m_dvdvideo, SIGNAL(processRunning (bool)), this, SLOT(setButtons(bool)));
 	connect(m_dvdvideo, SIGNAL(newProcessInfo(QString)), this, SLOT(appendNewLine(QString)));
 	connect(ui_pageauthoring.abortButton, SIGNAL(clicked()), m_dvdvideo, SLOT(abortProcess()));
 	//connect(m_dvdvideo, SIGNAL(authoringFinished(bool)), this, SLOT(next()));
