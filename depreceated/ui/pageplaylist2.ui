@@ -1,0 +1,147 @@
+<ui version="4.0" >
+ <class>PagePlaylist</class>
+ <widget class="QWidget" name="PagePlaylist" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>430</width>
+    <height>453</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4" >
+   <item>
+    <widget class="QLabel" name="description" >
+     <property name="text" >
+      <string>Add your movie files here. You can also set a title (only useful if you add a menu later on) and an end pause (transition) for each movie. Movie are going to be played in the order listed here.</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="KEditListBox" name="playlist" >
+     <property name="title" >
+      <string>Movie Playlist</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame" >
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" >
+      <item row="1" column="0" >
+       <widget class="QGroupBox" name="movie_prop" >
+        <property name="title" >
+         <string>Movie</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout" >
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout" >
+           <item>
+            <widget class="QLabel" name="title" >
+             <property name="text" >
+              <string>Title:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="movietitle" />
+           </item>
+          </layout>
+         </item>
+        </layout>
+        <zorder></zorder>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QGroupBox" name="endpause_prop" >
+        <property name="title" >
+         <string>Transition</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2" >
+         <item>
+          <layout class="QGridLayout" name="gridLayout" >
+           <item row="0" column="0" colspan="2" >
+            <widget class="QRadioButton" name="no_endpause" >
+             <property name="text" >
+              <string>Immediately play next movie</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" >
+            <widget class="QRadioButton" name="yes_endpause" >
+             <property name="text" >
+              <string>Pause for</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" >
+            <widget class="QSpinBox" name="value_endpause" >
+             <property name="enabled" >
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2" >
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>Movie Properties</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>movie_prop</zorder>
+     <zorder>endpause_prop</zorder>
+     <zorder>label_3</zorder>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KEditListBox</class>
+   <extends>QGroupBox</extends>
+   <header>keditlistbox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>yes_endpause</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>value_endpause</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>275</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>337</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

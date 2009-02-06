@@ -1,0 +1,15 @@
+TODO
+-----
+
+-Disable assistant buttons during the authoring process. DONE!
+-Make sure dvdauthor is installed and show version. DONE!
+-Update progress bar.
+-Show user-friendly progress messages.
+
+
+-Show movies lenght and size.
+-Check movies fit on a DVD before authoring.
+
+-Check movies are valid DVD compatible files.
+-Menu support.
+
