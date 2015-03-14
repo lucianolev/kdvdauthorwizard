@@ -1,0 +1,1 @@
+The idea behind this project is to create an simple wizard (yet feature rich) to author DVDs from different MPG movie files. The application will be programmed in C++ using the Qt/KDE4 frameworks.
